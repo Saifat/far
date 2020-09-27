@@ -1,6 +1,7 @@
 package jm.task.core.jdbc.util;
 import com.fasterxml.classmate.AnnotationConfiguration;
 import jm.task.core.jdbc.model.User;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -22,7 +23,7 @@ public class Util {
     public static final String DRIVER = "com.mysql.cj.jdbc.Driver";
     public static final String URL = "jdbc:mysql://localhost:3306/newbase?useUnicode=true&serverTimezone=UTC";
     public static final String USERNAME = "root";
-    public static final String PASS = "root";
+    public static final String PASS = "Vtnf1610vjhajpf";
 
     public Connection getConnection() {
         Connection connection = null;
@@ -49,9 +50,9 @@ public class Util {
                 setting.put(Environment.USER, USERNAME);
                 setting.put(Environment.PASS, PASS);
                 setting.put(Environment.DIALECT, "org.hibernate.dialect.MySQL5InnoDBDialect");
-
                 setting.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
                 setting.put(Environment.HBM2DDL_AUTO, "update");
+
 
                 configuration.setProperties(setting);
                 configuration.addAnnotatedClass(User.class);
